@@ -1,0 +1,107 @@
+2021-03-30 11:24:28.791  INFO 7632 --- [main] c.c.a.CourseAopAndAnnotationsApplication : Starting CourseAopAndAnnotationsApplication using Java 1.8.0_282 on alejandroLaptop with PID 7632 (/home/alejandro/Projects/Spring/Course-aop-and-annotations/target/classes started by alejandro in /home/alejandro/Projects/Spring/Course-aop-and-annotations)
+2021-03-30 11:24:28.794  INFO 7632 --- [main] c.c.a.CourseAopAndAnnotationsApplication : No active profile set, falling back to default profiles: default
+2021-03-30 11:24:29.365  INFO 7632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-03-30 11:24:29.406  INFO 7632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2021-03-30 11:24:29.818  INFO 7632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2021-03-30 11:24:29.826  INFO 7632 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-03-30 11:24:29.826  INFO 7632 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2021-03-30 11:24:29.880  INFO 7632 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-03-30 11:24:29.880  INFO 7632 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1038 ms
+2021-03-30 11:24:29.927  INFO 7632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-03-30 11:24:30.100  INFO 7632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-03-30 11:24:30.106  INFO 7632 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:aop'
+2021-03-30 11:24:30.334  INFO 7632 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-03-30 11:24:30.368  INFO 7632 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2021-03-30 11:24:30.469  INFO 7632 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-03-30 11:24:30.556  INFO 7632 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-03-30 11:24:31.116 DEBUG 7632 --- [main] org.hibernate.SQL                        : drop table if exists album_entity CASCADE 
+2021-03-30 11:24:31.117 DEBUG 7632 --- [main] org.hibernate.SQL                        : drop table if exists record_company_entity CASCADE 
+2021-03-30 11:24:31.117 DEBUG 7632 --- [main] org.hibernate.SQL                        : drop table if exists track_entity CASCADE 
+2021-03-30 11:24:31.117 DEBUG 7632 --- [main] org.hibernate.SQL                        : drop sequence if exists hibernate_sequence
+2021-03-30 11:24:31.119 DEBUG 7632 --- [main] org.hibernate.SQL                        : create sequence hibernate_sequence start with 1 increment by 1
+2021-03-30 11:24:31.121 DEBUG 7632 --- [main] org.hibernate.SQL                        : create table album_entity (album_id bigint not null, autor varchar(255), name varchar(255), price double, record_company_tittle varchar(255), primary key (album_id))
+2021-03-30 11:24:31.125 DEBUG 7632 --- [main] org.hibernate.SQL                        : create table record_company_entity (tittle varchar(255) not null, primary key (tittle))
+2021-03-30 11:24:31.128 DEBUG 7632 --- [main] org.hibernate.SQL                        : create table track_entity (track_id bigint not null, lycris varchar(255), name varchar(255), album_id bigint, primary key (track_id))
+2021-03-30 11:24:31.129 DEBUG 7632 --- [main] org.hibernate.SQL                        : alter table album_entity add constraint FKe7q7mg7959a78n69j2lqb75na foreign key (record_company_tittle) references record_company_entity
+2021-03-30 11:24:31.135 DEBUG 7632 --- [main] org.hibernate.SQL                        : alter table track_entity add constraint FK7ss6y6jget2qco3u8nkv9cqy4 foreign key (album_id) references album_entity
+2021-03-30 11:24:31.138  INFO 7632 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-03-30 11:24:31.146  INFO 7632 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-03-30 11:24:31.438  WARN 7632 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-30 11:24:31.549  INFO 7632 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-03-30 11:24:31.748  INFO 7632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2021-03-30 11:24:31.754  INFO 7632 --- [main] c.c.a.CourseAopAndAnnotationsApplication : Started CourseAopAndAnnotationsApplication in 3.289 seconds (JVM running for 3.744)
+2021-03-30 11:24:42.192  INFO 7632 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-03-30 11:24:42.192  INFO 7632 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-03-30 11:24:42.193  INFO 7632 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2021-03-30 11:24:42.545 DEBUG 7632 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : select albumentit0_.album_id as album_id1_0_, albumentit0_.autor as autor2_0_, albumentit0_.name as name3_0_, albumentit0_.price as price4_0_, albumentit0_.record_company_tittle as record_c5_0_ from album_entity albumentit0_
+2022-12-07 14:57:55.856  INFO 6606 --- [main] c.d.CourseAopAndAnnotationsApplication   : Starting CourseAopAndAnnotationsApplication using Java 11.0.17 on alejandro-IdeaPad with PID 6606 (/home/alejandro/Projects/DebuggeandoIdeas/youtube/spring-boot-web-and-data-music-api/target/classes started by alejandro in /home/alejandro/Projects/DebuggeandoIdeas/youtube/spring-boot-web-and-data-music-api)
+2022-12-07 14:57:55.857  INFO 6606 --- [main] c.d.CourseAopAndAnnotationsApplication   : No active profile set, falling back to default profiles: default
+2022-12-07 14:57:56.343  INFO 6606 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-07 14:57:56.392  INFO 6606 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
+2022-12-07 14:57:56.831  INFO 6606 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-12-07 14:57:56.839  INFO 6606 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-12-07 14:57:56.839  INFO 6606 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.44]
+2022-12-07 14:57:56.880  INFO 6606 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-12-07 14:57:56.881  INFO 6606 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 986 ms
+2022-12-07 14:57:56.911  INFO 6606 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-07 14:57:57.013  INFO 6606 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-12-07 14:57:57.018  INFO 6606 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:aop'
+2022-12-07 14:57:57.154  INFO 6606 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-07 14:57:57.181  INFO 6606 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.29.Final
+2022-12-07 14:57:57.267  INFO 6606 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-12-07 14:57:57.325  INFO 6606 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2022-12-07 14:57:57.707 DEBUG 6606 --- [main] org.hibernate.SQL                        : drop table if exists album_entity CASCADE 
+2022-12-07 14:57:57.708 DEBUG 6606 --- [main] org.hibernate.SQL                        : drop table if exists record_company_entity CASCADE 
+2022-12-07 14:57:57.708 DEBUG 6606 --- [main] org.hibernate.SQL                        : drop table if exists track_entity CASCADE 
+2022-12-07 14:57:57.708 DEBUG 6606 --- [main] org.hibernate.SQL                        : drop sequence if exists hibernate_sequence
+2022-12-07 14:57:57.710 DEBUG 6606 --- [main] org.hibernate.SQL                        : create sequence hibernate_sequence start with 1 increment by 1
+2022-12-07 14:57:57.711 DEBUG 6606 --- [main] org.hibernate.SQL                        : create table album_entity (album_id bigint not null, autor varchar(255), name varchar(255), price double, record_company_tittle varchar(255), primary key (album_id))
+2022-12-07 14:57:57.714 DEBUG 6606 --- [main] org.hibernate.SQL                        : create table record_company_entity (tittle varchar(255) not null, primary key (tittle))
+2022-12-07 14:57:57.717 DEBUG 6606 --- [main] org.hibernate.SQL                        : create table track_entity (track_id bigint not null, lycris varchar(255), name varchar(255), album_id bigint, primary key (track_id))
+2022-12-07 14:57:57.717 DEBUG 6606 --- [main] org.hibernate.SQL                        : alter table album_entity add constraint FKe7q7mg7959a78n69j2lqb75na foreign key (record_company_tittle) references record_company_entity
+2022-12-07 14:57:57.720 DEBUG 6606 --- [main] org.hibernate.SQL                        : alter table track_entity add constraint FK7ss6y6jget2qco3u8nkv9cqy4 foreign key (album_id) references album_entity
+2022-12-07 14:57:57.723  INFO 6606 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-12-07 14:57:57.727  INFO 6606 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-12-07 14:57:57.949  WARN 6606 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-12-07 14:57:58.039  INFO 6606 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2022-12-07 14:57:58.269  INFO 6606 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-12-07 14:57:58.279  INFO 6606 --- [main] c.d.CourseAopAndAnnotationsApplication   : Started CourseAopAndAnnotationsApplication in 2.743 seconds (JVM running for 3.034)
+2022-12-07 14:58:58.561  INFO 6606 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-12-07 14:58:58.565  INFO 6606 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2022-12-07 14:58:58.566  INFO 6606 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2022-12-07 14:58:58.638 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : call next value for hibernate_sequence
+2022-12-07 14:58:58.654 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : call next value for hibernate_sequence
+2022-12-07 14:58:58.654 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : call next value for hibernate_sequence
+2022-12-07 14:58:58.654 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : call next value for hibernate_sequence
+2022-12-07 14:58:58.660 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into record_company_entity (tittle) values (?)
+2022-12-07 14:58:58.661 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [rise records]
+2022-12-07 14:58:58.663 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into album_entity (autor, name, price, record_company_tittle, album_id) values (?, ?, ?, ?, ?)
+2022-12-07 14:58:58.663 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [VARCHAR] - [Kings of leon]
+2022-12-07 14:58:58.663 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [Kings of leon]
+2022-12-07 14:58:58.663 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [DOUBLE] - [100.0]
+2022-12-07 14:58:58.664 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [VARCHAR] - [rise records]
+2022-12-07 14:58:58.664 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [5] as [BIGINT] - [1]
+2022-12-07 14:58:58.664 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into track_entity (album_id, lycris, name, track_id) values (?, ?, ?, ?)
+2022-12-07 14:58:58.664 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2022-12-07 14:58:58.664 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [some lycris]
+2022-12-07 14:58:58.664 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Use somebody]
+2022-12-07 14:58:58.664 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [2]
+2022-12-07 14:58:58.665 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into track_entity (album_id, lycris, name, track_id) values (?, ?, ?, ?)
+2022-12-07 14:58:58.665 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2022-12-07 14:58:58.665 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [some lycris]
+2022-12-07 14:58:58.665 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Find me]
+2022-12-07 14:58:58.665 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [3]
+2022-12-07 14:58:58.665 DEBUG 6606 --- [http-nio-8080-exec-2] org.hibernate.SQL                        : insert into track_entity (album_id, lycris, name, track_id) values (?, ?, ?, ?)
+2022-12-07 14:58:58.665 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [1] as [BIGINT] - [1]
+2022-12-07 14:58:58.665 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [2] as [VARCHAR] - [some lycris]
+2022-12-07 14:58:58.665 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [3] as [VARCHAR] - [Sex on fire]
+2022-12-07 14:58:58.666 TRACE 6606 --- [http-nio-8080-exec-2] o.h.type.descriptor.sql.BasicBinder      : binding parameter [4] as [BIGINT] - [4]
+2022-12-07 14:59:08.780  INFO 6606 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2022-12-07 14:59:08.782  INFO 6606 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-12-07 14:59:08.782  INFO 6606 --- [SpringContextShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2022-12-07 14:59:08.782 DEBUG 6606 --- [SpringContextShutdownHook] org.hibernate.SQL                        : drop table if exists album_entity CASCADE 
+2022-12-07 14:59:08.787 DEBUG 6606 --- [SpringContextShutdownHook] org.hibernate.SQL                        : drop table if exists record_company_entity CASCADE 
+2022-12-07 14:59:08.787 DEBUG 6606 --- [SpringContextShutdownHook] org.hibernate.SQL                        : drop table if exists track_entity CASCADE 
+2022-12-07 14:59:08.787 DEBUG 6606 --- [SpringContextShutdownHook] org.hibernate.SQL                        : drop sequence if exists hibernate_sequence
+2022-12-07 14:59:08.789  INFO 6606 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-12-07 14:59:08.791  INFO 6606 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
