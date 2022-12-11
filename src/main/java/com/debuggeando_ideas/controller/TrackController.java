@@ -8,11 +8,7 @@ import com.debuggeando_ideas.model.ResponseModel;
 import com.debuggeando_ideas.service.ITrackService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "v1/track")
@@ -33,6 +29,12 @@ public class TrackController {
 		TrackEntity result = this.service.save(track);
 		ResponseModel response = new ResponseModel(LocalDateTime.now(), result, "Success");
 		return ResponseEntity.ok().body(response);
+	}
+
+	@DeleteMapping(path = "{id}")
+	public ResponseEntity<Void> delete(@PathVariable Long id) {
+		this.service.delete(id);
+		return ResponseEntity.noContent().build();
 	}
 
 }

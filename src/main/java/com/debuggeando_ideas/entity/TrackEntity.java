@@ -22,7 +22,7 @@ public class TrackEntity implements Serializable {
 	private String name;
 	private String lycris;
 	@JsonIgnoreProperties(value = "tracks")
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.DETACH)
 	@JoinColumn(name = "albumId")
 	private AlbumEntity album;
 	

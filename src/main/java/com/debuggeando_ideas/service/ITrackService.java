@@ -5,4 +5,5 @@ import com.debuggeando_ideas.service.common.SimpleService;
 
 public interface ITrackService extends SimpleService<TrackEntity>{
 
+    public void delete(Long id);
 }
